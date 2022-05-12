@@ -6,6 +6,4 @@
 
 ## Endpoints
 
-FE: https://modern-comm.vercel.app/
-
 MS-1: https://7t8gf1xndh.execute-api.us-east-1.amazonaws.com/
