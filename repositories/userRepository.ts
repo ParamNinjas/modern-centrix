@@ -20,8 +20,7 @@ async function GetAllCompanies(): Promise<IResponseObject<ICompany[]>>{
        return  GetApiResponse<ICompany[]>(true,"Cannot retrieve user",undefined)}
       
     else{
-        const response = GetApiResponse<ICompany[]>(false,`Retrieved business user`,_response.result as ICompany[]);
-        return response;
+        return _response;
     }
 } 
 
