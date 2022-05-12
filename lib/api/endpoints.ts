@@ -10,7 +10,7 @@ export const Api = {
     const response = await GET(`${SupabaseDbUrl}/rest/v1/company/${payload}`);
     return response.data;
   },
-  GET_All_Companies: async (payload: string): Promise<IResponseObject<ICompany>> => {
+  GET_All_Companies: async (): Promise<IResponseObject<ICompany[]>> => {
     const response = await GET(`${SupabaseDbUrl}/rest/v1/company`);
     return response.data;
   },

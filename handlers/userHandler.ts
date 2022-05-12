@@ -37,6 +37,26 @@ const headers = {
       resolve(response)
     })
   }
+  export const getAllCompanies: Handler = async (event: any) => {
+
+    Diagnostic(`${className}.getCompany [BEGIN]`, event);
+
+
+    const userResponse = await UserRepository.GetAllCompanies();
+    const result = userResponse.error?  
+    GetApiResponse<ICompany[]>(true, "Error getting user", undefined):  
+    GetApiResponse<ICompany[]>(false, userResponse.message, userResponse.result)
+
+    const response = {
+      statusCode: result.error? 500: 200,
+      headers: headers,
+      body: JSON.stringify(result),
+    };
+  
+    return new Promise((resolve) => {
+      resolve(response)
+    })
+  }
 
 
 

@@ -1,5 +1,5 @@
-org: devparam
-app: modern-centrix
+# org: devparam
+# app: modern-centrix
 service: modern-centrix-be
 frameworkVersion: "3"
 
@@ -9,7 +9,7 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: handlers/userHandler.getAllCompanies
     events:
       - httpApi:
           path: /
@@ -17,3 +17,4 @@ functions:
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-offline
