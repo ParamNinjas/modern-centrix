@@ -1,0 +1,28 @@
+org: devparam
+app: modern-centrix
+service: modern-centrix-be
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+  timeout: 30
+  environment:
+    AWS_ACCOUNT_ID: 466625930610
+    ALIAS: ${file(./env.yml):${opt:alias, 'DEV'}.ENV}
+
+functions:
+  getUser:
+    handler: handlers/userHandler.getUser
+    events:
+      - http:
+          path: /users/get
+          method: get
+          cors: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline

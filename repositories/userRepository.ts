@@ -21,3 +21,4 @@ export const UserRepository= {
     GetCompany:GetCompany,
 }
 
+// serverless  --org=devparam --app=modern-centrix  --name=modern-centrix  --template=aws-node-http-api-typescript
